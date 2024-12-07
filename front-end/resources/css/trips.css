@@ -1,0 +1,96 @@
+.container {
+  margin: 5% auto;
+}
+
+/* Page tite */
+.page-title {
+  margin-top: 1%;
+}
+
+.page-title h2 {
+  font-size: 40px;
+  font-weight: 450;
+  text-align: left;
+  margin-left: 8.5%;
+  margin-bottom: 2%;
+}
+
+/* Itineraries */
+.itinerary-container {
+  background-color: var(--accent-color);
+  border-radius: 5px;
+  padding: 0 16px;
+}
+
+.itinerary-container .input {
+  width: calc(50% - 5px);
+  height: 40px;
+  border: none;
+  background-color: white;
+  box-shadow: 0px 5px 10px rgb(180, 180, 180);
+  border-radius: 20px;
+  padding: 0 20px;
+  font-size: 16px;
+  margin: 2% 60% 2% auto;
+  /* top, right, bottom, left */
+}
+
+.itinerary-container .input::placeholder {
+  color: var(--text-color);
+  font-family: raleway;
+  font-size: 18px;
+}
+
+.itinerary-container input:focus {
+  outline: none;
+  box-shadow: 0px 5px 10px var(--text-color);
+}
+
+.itinerary-container button,
+.itineraries button {
+  width: 100px;
+  height: 40px;
+  border: none;
+  background-color: var(--text-color);
+  color: white;
+  border-radius: 20px;
+  font-size: 16px;
+  margin: 2% 5px;
+}
+
+.itinerary-container button:hover,
+.itineraries button:hover {
+  background-color: black;
+  color: white;
+}
+
+.itineraries .trip-overview {
+  background: white;
+  box-shadow: 0 0 35px 0 rgba(130, 130, 130, 0.2);
+  border-radius: 10px;
+  padding: 10px 35px;
+  margin-bottom: 30px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.trip-overview:hover {
+  outline: none;
+  box-shadow: 0px 5px 10px var(--text-color);
+}
+
+/* Trip Info */
+.trip-details ul li {
+  font-weight: 600;
+  list-style: none;
+  opacity: 0.75;
+  padding: 10px 5px;
+  border-bottom: 0;
+}
+
+.trip-details ul li i {
+  font-size: 20px;
+  position: relative;
+  top: 1px;
+}

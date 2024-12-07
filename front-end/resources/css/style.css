@@ -1,0 +1,140 @@
+:root {
+    --primary-color: #FFFFF7;
+    --accent-color: #88A673;
+    --text-color: #586F7C;
+}
+
+.raleway {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: raleway;
+}
+
+body {
+    background-color: var(--primary-color);
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+.center {
+    align-items: center;
+}
+
+nav {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    top: 0;
+    background: var(--accent-color);
+}
+
+nav .wrapper {
+    padding: 10px 30px;
+    height: 50px;
+    line-height: 30px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper .logo a {
+    color: #f2f2f2;
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.wrapper .nav-links {
+    display: inline-flex;
+    list-style-type: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-right: 20px;
+    /* Adjust margin between nav items if needed */
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 9px 15px;
+    border-radius: 15px;
+    height: 100%;
+}
+
+.nav-links li a:hover {
+    background: var(--text-color);
+}
+
+.active {
+    background-color: var(--text-color);
+}
+
+/* Page Title Cover */
+.jumbotron {
+    background-color: transparent;
+}
+
+.jumbotron h2 {
+    font-size: 40px;
+    font-weight: 450;
+    margin: 10% auto;
+}
+
+.jumbotron h1 {
+    color: var(--accent-color);
+    font-size: 70px;
+    font-weight: 650;
+    margin: -9% auto 3% auto;
+    /* top, right, bottom, left */
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.content {
+    padding: 20px;
+}
+
+.floating-card {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 25%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 12px;
+}
