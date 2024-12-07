@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--Documentation: https://www.baeldung.com/spring-thymeleaf-fragments#parametrized-fragments-->
+<nav id="tourista-nav" th:fragment="navbar(activeNav)">
+    <div class="wrapper">
+        <div class="logo"><a th:href="@{/}">Tourista</a></div>
+        <ul class="nav-links">
+            <li><a th:href="@{/}" th:classappend="${activeNav} == 'home' ? 'active'"> Home</a></li>
+            <li><a th:href="@{/trip/list}" th:classappend="${activeNav} == 'trips' ? 'active'"> Trips</a></li>
+            <li><a th:href="@{/profiles/notifications}" th:classappend="${activeNav} == 'notifications' ? 'active'"> Notifications</a></li>
+
+            <div class="dropdown">
+                <li>
+                    <a th:text="'Hi ' + ${#authentication.getPrincipal().getUsername()} + '!'"  th:classappend="${activeNav} == 'login' ? 'active'">  </a>
+                        <div class="dropdown-content">
+                            <a th:href="@{/profile}" th:classappend="${activeNav} == 'login' ? 'active'">
+                                Profile
+                            </a>
+                            <form th:action="@{/logout}" method="post">
+                                <input type="submit" value="Logout"/>
+                            </form>
+                        </div>
+                </li>
+            </div>
+
+        </ul>
+    </div>
+</nav>
+</html>

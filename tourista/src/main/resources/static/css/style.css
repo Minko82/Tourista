@@ -1,0 +1,168 @@
+:root {
+    --primary-color: #FFFFF7;
+    --accent-color: #88A673;
+    --text-color: #586F7C;
+}
+
+.raleway {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: raleway;
+}
+
+body {
+    background-color: var(--primary-color);
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+.center {
+    align-items: center;
+}
+
+/* START NAVBAR */
+nav#tourista-nav {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    top: 0;
+    background: var(--accent-color);
+}
+
+nav#tourista-nav .wrapper {
+    padding: 10px 30px;
+    height: 50px;
+    line-height: 30px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav#tourista-nav .wrapper .logo a {
+    color: #f2f2f2;
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+nav#tourista-nav .wrapper .nav-links {
+    display: inline-flex;
+    list-style-type: none;
+}
+
+nav#tourista-nav .nav-links li {
+    display: inline-block;
+    margin-right: 20px;
+    /* Adjust margin between nav items if needed */
+}
+
+nav#tourista-nav .nav-links li:last-child {
+    margin-right: 0;
+}
+
+nav#tourista-nav .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 9px 15px;
+    border-radius: 15px;
+    height: 100%;
+}
+
+nav#tourista-nav .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 9px 15px;
+    border-radius: 15px;
+    height: 100%;
+}
+
+nav#tourista-nav .nav-links li a:hover {
+    background: var(--text-color);
+}
+
+nav#tourista-nav .active {
+    background-color: var(--text-color);
+}
+
+nav#tourista-nav .dropdown {
+  position: relative;
+  display: inline-block;
+  background-color: transparent;
+  color: white;
+}
+
+nav#tourista-nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--text-color);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+nav#tourista-nav .dropdown:hover .dropdown-content {
+  display: block;
+  background-color: white;
+  color: black;
+}
+
+nav#tourista-nav .dropdown:hover .dropdown-content a {
+  color: black;
+}
+
+nav#tourista-nav .dropdown-content a, .dropdown-content input[type="submit"] {
+  color: black;
+  text-decoration: none;
+  padding: 10px 14px;
+  display: block;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 17px !important;
+  font-weight: 500;
+  border-radius: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+nav#tourista-nav .dropdown-content a:hover, .nav-links li input:hover {
+  background-color: var(--text-color) !important;
+  color: white !important;
+}
+/* END NAVBAR */
+
+/* Page Title Cover */
+.jumbotron {
+    background-color: transparent;
+}
+
+.jumbotron h2 {
+    font-size: 40px;
+    font-weight: 450;
+    margin: 10% auto;
+}
+
+.jumbotron h1 {
+    color: var(--accent-color);
+    font-size: 70px;
+    font-weight: 650;
+    margin: -9% auto 3% auto;
+    /* top, right, bottom, left */
+}
+

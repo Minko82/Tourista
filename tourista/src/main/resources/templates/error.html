@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1 th:text="${errorMessage}"></h1>
+<a href="/">Go Home</a>
+<p th:if="${exception}" th:text="'exception: ' + ${exception}"></p>
+<p th:if="${url}" th:text="'url: ' + ${url}"></p>
+</body>
+</html>

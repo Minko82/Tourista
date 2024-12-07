@@ -1,0 +1,14 @@
+.row {
+    margin-top: 5%;
+}
+
+.page-title {
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.page-title h2 {
+    font-size: 40px;
+    font-weight: 450;
+    text-align: left;
+}

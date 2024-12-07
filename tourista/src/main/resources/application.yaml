@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: tourista
+  datasource:
+    url: jdbc:h2:mem:touristadb;NON_KEYWORDS=USER
+    username: art
+    password: art
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true

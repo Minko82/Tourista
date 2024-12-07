@@ -1,0 +1,60 @@
+/* Login Boxes */
+.credentials-container {
+    width: 50%;
+    margin: -7% auto;
+    text-align: center;
+    border-radius: 20px;
+
+}
+
+.credentials-container input {
+    width: calc(80% - 5px);
+    height: 40px;
+    border: none;
+    background-color: white;
+    box-shadow: 0px 5px 10px rgb(180, 180, 180);
+    border-radius: 20px;
+    padding: 0 20px;
+    font-size: 16px;
+    margin: auto 5px 30px auto;
+    /* top, right, bottom, left */
+}
+
+.credentials-container input::placeholder {
+    color: var(--text-color);
+    font-family: raleway;
+    font-size: 18px;
+}
+
+.credentials-container input:focus {
+    outline: none;
+    box-shadow: 0px 5px 10px var(--text-color);
+}
+
+.credentials-container button {
+    width: 200px;
+    height: 40px;
+    border: none;
+    background-color: var(--text-color);
+    color: white;
+    border-radius: 20px;
+    font-size: 16px;
+    margin: 18px 5px;
+}
+
+.credentials-container button:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Redirection Link*/
+.redirection-link {
+    text-align: center;
+    margin: 7% auto;
+}
+
+.redirection-link a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: large;
+}

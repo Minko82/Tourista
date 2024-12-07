@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Login</title>
+    <!-- Common head elements partial   -->
+    <head th:insert="~{fragments/head.html :: common-header}"></head>
+
+    <link th:href="@{/css/loginandsignup.css}" rel="stylesheet"/>
+
+</head>
+
+<body>
+<div class="container center">
+    <div class="jumbotron">
+        <h2>Ready for your next</h2>
+        <h1>ADVENTURE?</h1>
+    </div>
+
+    <div th:if="${param.error}">
+        Invalid username and password.
+    </div>
+
+    <div class="credentials-container">
+        <form th:action="@{/login}" method="post">
+            <input type="text" style="margin-bottom: 2%;" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" name="password" required>
+            <br>
+            <a><button type="submit">SIGN IN</button></a>
+        </form>
+    </div>
+
+    <div class="redirection-link">
+        <a th:href="@{/profiles/signup}"> Or create an account</a>
+    </div>
+
+</div>
+</body>
+
+</html>

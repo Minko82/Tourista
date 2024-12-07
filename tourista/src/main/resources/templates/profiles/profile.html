@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Profile</title>
+    <!-- Common head elements partial   -->
+    <head th:insert="~{fragments/head.html :: common-header}"></head>
+
+    <link th:href="@{/css/profile.css}" rel="stylesheet"/>
+
+</head>
+
+<body>
+<!-- Navbar partial   -->
+<nav th:insert="~{fragments/navbar.html :: navbar('login')}"></nav>
+
+<div class="container center">
+    <div class="jumbotron">
+        <h2>Hope you're ready for your trip </h2>
+        <h1 th:text=" ${#authentication.getPrincipal().getUsername()} + '!'"></h1>
+    </div>
+</div>
+
+<div class="textbox-container">
+    <p class="floating-card"> Questions? Click <a href="index.html"> Here! </a> (maybe a future FAQ page) </p>
+</div>
+
+<div class="card">
+    <div class="container">
+        <h4><b>Here's a few recommended trips based off your added trips:</b></h4>
+        <p>Tiblisi, Georgia</p>
+    </div>
+</div>
+
+
+</body>
+
+</html>

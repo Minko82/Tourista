@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Add Trip</title>
+    <!-- Common head elements partial   -->
+    <head th:insert="~{fragments/head.html :: common-header}"></head>
+
+    <link th:href="@{/css/loginandsignup.css}" rel="stylesheet"/>
+
+</head>
+
+<body>
+    <!-- Navbar partial   -->
+    <nav th:insert="~{fragments/navbar.html :: navbar('trips')}"></nav>
+
+    <div class="container center">
+        <div class="jumbotron center">
+            <h2>Create your next trip</h2>
+        </div>
+
+        <div class="credentials-container center" style="margin-top: -15%; margin-left: 28%; background-color: ">
+            <form th:action="@{/trip/save}" method="post" style="width: 99%; max-width: 500px;">
+                <input type="text" style="margin-bottom: 2%; width: 99%;" id="name" name="name" placeholder="Itinerary Name" required>
+
+                <input type="text" style="margin-bottom: 4%; width: 99%;" id="destination" name="destination" placeholder="Destination" required>
+
+                <div style="display: flex; justify-content: space-between;">
+                    <div style="flex: 1; margin-right: 2%;">
+                        <label for="startDate" style="display: block;">Start Date</label>
+                        <input type="date" id="startDate" name="startDate" required style="width: 99%;">
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="endDate" style="display: block;">End Date</label>
+                        <input type="date" id="endDate" name="endDate" required style="width: 99%;">
+                    </div>
+                </div>
+
+                <button type="submit" style="width: 50%; margin-top: 10px;">CREATE TRIP</button>
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>

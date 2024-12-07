@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>My Trips</title>
+
+    <!-- Common head elements partial   -->
+    <head th:insert="~{fragments/head.html :: common-header}"></head>
+
+    <link th:href="@{/css/trips.css}" rel="stylesheet"/>
+</head>
+
+<body>
+<!--Navbar partial-->
+<nav th:insert="~{fragments/navbar.html :: navbar('trips')}"></nav>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title">
+                <h2>My Trips</h2>
+            </div>
+        </div>
+
+        <div class="col-lg-10 mx-auto">
+            <div>
+                <form class="itinerary-container">
+                    <input type="text" id="keywordSearch" class="input" placeholder="Search for a trip">
+                    <button type="submit"> SEARCH</button>
+                    <a th:href="@{/trip/add}" class="submit"> ADD </a>
+                </form>
+
+                <div class="itineraries">
+                    <p id="numOfItineraries">Total Itineraries : <span th:text="${trips.size()}"></span></p>
+
+                    <!--Iterates and creates the list of trips by looping-->
+                    <div th:each="trip : ${trips}" class="trip-overview">
+                        <div class="my-4 d-md-flex align-items-center flex-wrap">
+
+                            <div class="trip-details">
+                                <h5 th:text="${trip.name}" class="text-center text-md-left">Spring Break</h5>
+                                <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
+                                    <li class="mr-md-4">
+                                        <i class="zmdi zmdi-pin mr-2"></i>
+                                        <span th:text="${trip.destination}"></span>
+                                    </li>
+                                    <li class="mr-md-4">
+                                        <i class="zmdi zmdi-money mr-2"></i>
+                                        <span th:text="${trip.estimatedCost} ? ${trip.estimatedCost} : 'N/A'"></span>
+                                    </li>
+                                    <li class="mr-md-4">
+                                        <i class="zmdi zmdi-time mr-2"></i>
+                                        <span th:text="${trip.getStartDate().format(dateFormatter)} + '-' + ${trip.getEndDate().format(dateFormatter)} "></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="trip-right my-4 flex-shrink-0">
+                            <!-- Request Parameter: https://toolsqa.com/postman/request-parameters-in-postman/-->
+                            <a th:href="@{/calendar(id=${trip.id})}" type="button"> VIEW >></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+
+</html>

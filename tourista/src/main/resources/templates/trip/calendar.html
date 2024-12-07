@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Calendar</title>
+
+    <link rel="stylesheet" th:href="@{css/tui-time-picker.min.css}" />
+    <link rel="stylesheet" th:href="@{css/tui-date-picker.min.css}" />
+    <link rel="stylesheet" th:href="@{css/toastui-calendar.css}" />
+    <link rel="stylesheet" th:href="@{css/reset.css}" />
+    <link rel="stylesheet" th:href="@{css/app.css}" />
+    <link rel="stylesheet" th:href="@{css/icons.css}" />
+
+    <head th:insert="~{fragments/head.html :: common-header}"></head>
+
+    <link th:href="@{/css/trips.css}" rel="stylesheet"/>
+
+    <!-- Inject controller's model data to JavaScript -->
+    <script th:inline="javascript">
+      const trip = [[${trip}]];
+      console.log(trip);
+    </script>
+
+  </head>
+  <body>
+    <div>
+      <!--Navbar partial-->
+      <nav th:insert="~{fragments/navbar.html :: navbar('trips')}"></nav>
+
+    </div>
+
+
+    <div class="app-container code-html" style="margin-top:4%;">
+      <article class="content">
+        <aside class="sidebar">
+          <div class="sidebar-item">
+            <input class="checkbox-all" type="checkbox" id="all" value="all" checked />
+            <label class="checkbox checkbox-all" for="all">View all</label>
+          </div>
+          <hr />
+          <div class="sidebar-item">
+            <input type="checkbox" th:id="${trip.id}" th:value="${trip.id}" class="checkbox-round" checked />
+            <label class="checkbox checkbox-calendar checkbox-1" th:for="${trip.id}" th:text="${trip.name}"></label>
+          </div>
+          <hr />
+        </aside>
+        <section class="app-column">
+          <nav class="navbar-cal">
+            <div class="dropdown" id="dropdown-cal-view">
+              <div class="dropdown-trigger" id="dropdown-cal-view-trigger">
+                <button
+                  class="button is-rounded"
+                  aria-haspopup="true"
+                  aria-controls="dropdown-menu"
+                >
+                  <span class="button-text"></span>
+                  <span
+                    class="dropdown-icon toastui-calendar-icon toastui-calendar-ic-dropdown-arrow"
+                    id="dropdown-cal-view-icon"
+                  ></span>
+                </button>
+              </div>
+              <div class="dropdown-menu">
+                <div class="dropdown-content" id="dropdown-cal-view-content">
+                  <a href="#" class="dropdown-item" data-view-name="month">Monthly</a>
+                  <a href="#" class="dropdown-item" data-view-name="week">Weekly</a>
+                  <a href="#" class="dropdown-item" data-view-name="day">Daily</a>
+                </div>
+              </div>
+            </div>
+            <button class="button is-rounded today">Today</button>
+            <button class="button is-rounded prev">
+              <img
+                alt="prev"
+                th:src="@{images/ic-arrow-line-left.png}"
+                th:attr="srcset=
+                  @{images/ic-arrow-line-left@2x.png} + ' 2x, '
+                  + @{images/ic-arrow-line-left@3x.png} + ' 3x'
+                "
+              />
+            </button>
+            <button class="button is-rounded next">
+              <img
+                alt="prev"
+                th:src="@{images/ic-arrow-line-right.png}"
+                th:attr="srcset=
+                  @{images/ic-arrow-line-right@2x.png} + ' 2x, '
+                  + @{images/ic-arrow-line-right@3x.png} + ' 3x'
+                "
+              />
+            </button>
+            <span class="navbar--range"></span>
+            <div class="nav-checkbox">
+              <input class="checkbox-collapse" type="checkbox" id="collapse" value="collapse" />
+              <label for="collapse">Collapse duplicate events and disable the detail popup</label>
+            </div>
+          </nav>
+          <main id="app"></main>
+        </section>
+      </article>
+    </div>
+
+    <script th:src="@{js/moment.min.js}"></script>
+    <script th:src="@{js/chance.min.js}"></script>
+    <script th:src="@{js/tui-time-picker.min.js}"></script>
+    <script th:src="@{js/tui-date-picker.min.js}"></script>
+    <script th:src="@{js/toastui-calendar.ie11.min.js}"></script>
+    <script th:src="@{js/mock-data.js}"></script>
+    <script th:src="@{js/utils.js}"></script>
+    <script th:src="@{js/app.js}"></script>
+  </body>
+</html>
